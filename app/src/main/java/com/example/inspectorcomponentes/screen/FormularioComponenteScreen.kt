@@ -1,4 +1,4 @@
-package com.example.inspectorcomponentes.ui.screen
+package com.example.inspectorcomponentes.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -26,7 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.inspectorcomponentes.R
 import com.example.inspectorcomponentes.data.local.entity.ComponenteEntity
-import com.example.inspectorcomponentes.ui.viewmodel.ComponenteViewModel
+import com.example.inspectorcomponentes.viewmodel.ComponenteViewModel
 
 @Composable
 fun FormularioComponenteScreen(

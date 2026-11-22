@@ -1,4 +1,4 @@
-package com.example.inspectorcomponentes.ui.viewmodel
+package com.example.inspectorcomponentes.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

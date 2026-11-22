@@ -1,4 +1,4 @@
-package com.example.inspectorcomponentes.ui.navigation
+package com.example.inspectorcomponentes.screen.navigation
 
 /**
  * Define las rutas de navegación tipadas de la aplicación, evitando Strings hardcoded

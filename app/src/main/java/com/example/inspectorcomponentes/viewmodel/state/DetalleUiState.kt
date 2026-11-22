@@ -1,4 +1,4 @@
-package com.example.inspectorcomponentes.ui.state
+package com.example.inspectorcomponentes.viewmodel.state
 
 import com.example.inspectorcomponentes.data.local.entity.ComponenteEntity
 

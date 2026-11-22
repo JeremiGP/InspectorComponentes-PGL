@@ -1,4 +1,4 @@
-package com.example.inspectorcomponentes.ui.screen
+package com.example.inspectorcomponentes.screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

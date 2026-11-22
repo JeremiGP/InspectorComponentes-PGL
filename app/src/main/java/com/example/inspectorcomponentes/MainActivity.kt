@@ -5,12 +5,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
-import com.example.inspectorcomponentes.ui.AppInspectorMainScreen
+import com.example.inspectorcomponentes.screen.AppInspectorMainScreen
 import com.example.inspectorcomponentes.ui.theme.InspectorComponentesTheme
-import com.example.inspectorcomponentes.ui.viewmodel.ComponenteViewModel
-import com.example.inspectorcomponentes.ui.viewmodel.ComponenteViewModelFactory
-import com.example.inspectorcomponentes.ui.viewmodel.DetalleComponenteViewModel
-import com.example.inspectorcomponentes.ui.viewmodel.DetalleComponenteViewModelFactory
+import com.example.inspectorcomponentes.viewmodel.ComponenteViewModel
+import com.example.inspectorcomponentes.viewmodel.ComponenteViewModelFactory
+import com.example.inspectorcomponentes.viewmodel.DetalleComponenteViewModel
+import com.example.inspectorcomponentes.viewmodel.DetalleComponenteViewModelFactory
 
 class MainActivity : ComponentActivity() {
 

@@ -1,10 +1,10 @@
-package com.example.inspectorcomponentes.ui.viewmodel
+package com.example.inspectorcomponentes.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.inspectorcomponentes.data.local.entity.ComponenteEntity
 import com.example.inspectorcomponentes.data.repository.ComponenteRepository
-import com.example.inspectorcomponentes.ui.state.DetalleUiState
+import com.example.inspectorcomponentes.viewmodel.state.DetalleUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

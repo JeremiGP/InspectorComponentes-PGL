@@ -1,6 +1,5 @@
-package com.example.inspectorcomponentes.ui
+package com.example.inspectorcomponentes.screen
 
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -22,7 +21,6 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination.Companion.hierarchy
@@ -34,15 +32,10 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.inspectorcomponentes.R
-import com.example.inspectorcomponentes.ui.navigation.Ruta
-import com.example.inspectorcomponentes.ui.screen.AjustesScreen
-import com.example.inspectorcomponentes.ui.screen.CatalogoScreen
-import com.example.inspectorcomponentes.ui.screen.DetalleComponenteScreen
-import com.example.inspectorcomponentes.ui.screen.EscanerScreen
-import com.example.inspectorcomponentes.ui.screen.FormularioComponenteScreen
-import com.example.inspectorcomponentes.ui.screen.InicioScreen
-import com.example.inspectorcomponentes.ui.viewmodel.ComponenteViewModel
-import com.example.inspectorcomponentes.ui.viewmodel.DetalleComponenteViewModel
+import com.example.inspectorcomponentes.screen.navigation.Ruta
+import com.example.inspectorcomponentes.viewmodel.ComponenteViewModel
+import com.example.inspectorcomponentes.viewmodel.DetalleComponenteViewModel
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

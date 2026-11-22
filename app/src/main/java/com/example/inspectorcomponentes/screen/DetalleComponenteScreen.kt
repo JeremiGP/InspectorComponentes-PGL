@@ -1,4 +1,4 @@
-package com.example.inspectorcomponentes.ui.screen
+package com.example.inspectorcomponentes.screen
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -25,8 +25,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.inspectorcomponentes.R
 import com.example.inspectorcomponentes.data.local.entity.ComponenteEntity
-import com.example.inspectorcomponentes.ui.state.DetalleUiState
-import com.example.inspectorcomponentes.ui.viewmodel.DetalleComponenteViewModel
+import com.example.inspectorcomponentes.viewmodel.state.DetalleUiState
+import com.example.inspectorcomponentes.viewmodel.DetalleComponenteViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

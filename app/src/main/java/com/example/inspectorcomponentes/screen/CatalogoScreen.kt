@@ -1,4 +1,4 @@
-package com.example.inspectorcomponentes.ui.screen
+package com.example.inspectorcomponentes.screen
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -31,12 +31,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.inspectorcomponentes.R
 import com.example.inspectorcomponentes.data.local.entity.ComponenteEntity
-import com.example.inspectorcomponentes.ui.viewmodel.ComponenteViewModel
+import com.example.inspectorcomponentes.viewmodel.ComponenteViewModel
 
 @Composable
 fun CatalogoScreen(
