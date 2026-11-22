@@ -9,6 +9,8 @@ import com.example.inspectorcomponentes.ui.AppInspectorMainScreen
 import com.example.inspectorcomponentes.ui.theme.InspectorComponentesTheme
 import com.example.inspectorcomponentes.ui.viewmodel.ComponenteViewModel
 import com.example.inspectorcomponentes.ui.viewmodel.ComponenteViewModelFactory
+import com.example.inspectorcomponentes.ui.viewmodel.DetalleComponenteViewModel
+import com.example.inspectorcomponentes.ui.viewmodel.DetalleComponenteViewModelFactory
 
 class MainActivity : ComponentActivity() {
 
@@ -16,12 +18,19 @@ class MainActivity : ComponentActivity() {
         ComponenteViewModelFactory((application as InspectorApplication).repository)
     }
 
+    private val detalleViewModel: DetalleComponenteViewModel by viewModels {
+        DetalleComponenteViewModelFactory((application as InspectorApplication).repository)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             InspectorComponentesTheme {
-                AppInspectorMainScreen(viewModel = viewModel)
+                AppInspectorMainScreen(
+                    viewModel = viewModel,
+                    detalleViewModel = detalleViewModel
+                )
             }
         }
     }

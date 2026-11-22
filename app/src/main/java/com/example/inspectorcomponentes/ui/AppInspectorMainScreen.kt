@@ -37,12 +37,18 @@ import androidx.navigation.navArgument
 import com.example.inspectorcomponentes.R
 import com.example.inspectorcomponentes.ui.navigation.Ruta
 import com.example.inspectorcomponentes.ui.screen.CatalogoScreen
+import com.example.inspectorcomponentes.ui.screen.DetalleComponenteScreen
+import com.example.inspectorcomponentes.ui.screen.FormularioComponenteScreen
 import com.example.inspectorcomponentes.ui.screen.InicioScreen
 import com.example.inspectorcomponentes.ui.viewmodel.ComponenteViewModel
+import com.example.inspectorcomponentes.ui.viewmodel.DetalleComponenteViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppInspectorMainScreen(viewModel: ComponenteViewModel) {
+fun AppInspectorMainScreen(
+    viewModel: ComponenteViewModel,
+    detalleViewModel: DetalleComponenteViewModel
+) {
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
@@ -145,7 +151,10 @@ fun AppInspectorMainScreen(viewModel: ComponenteViewModel) {
                 )
             }
             composable(Ruta.Formulario.route) {
-                PlaceholderScreen(stringResource(id = R.string.placeholder_nuevo))
+                FormularioComponenteScreen(
+                    viewModel = viewModel,
+                    onNavigateBack = { navController.popBackStack() }
+                )
             }
             composable(Ruta.Escaner.route) {
                 PlaceholderScreen(stringResource(id = R.string.placeholder_escaner))
@@ -158,7 +167,11 @@ fun AppInspectorMainScreen(viewModel: ComponenteViewModel) {
                 arguments = listOf(navArgument("componenteId") { type = NavType.IntType })
             ) { backStackEntry ->
                 val id = backStackEntry.arguments?.getInt("componenteId") ?: 0
-                PlaceholderScreen(stringResource(id = R.string.placeholder_detalle, id))
+                DetalleComponenteScreen(
+                    idComponente = id,
+                    viewModel = detalleViewModel,
+                    onNavigateBack = { navController.popBackStack() }
+                )
             }
         }
     }
