@@ -1,3 +1,36 @@
 <resources>
-    <string name="app_name">InspectorComponentes</string>
+    <!-- Textos generales -->
+    <string name="app_name">Inspector Componentes</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_inicio">Inicio</string>
+    <string name="nav_catalogo">Catálogo</string>
+    <string name="nav_nuevo">Añadir</string>
+    <string name="nav_escaner">Escáner</string>
+    <string name="nav_ajustes">Ajustes</string>
+
+    <!-- Títulos de TopAppBar -->
+    <string name="title_inicio">Hola Inspector</string>
+    <string name="title_catalogo">Catálogo de Componentes</string>
+    <string name="title_nuevo">Alta de Componente</string>
+    <string name="title_detalle">Detalle del Componente</string>
+    <string name="title_ajustes">Ajustes</string>
+    <string name="title_escaner">Escáner SMD</string>
+
+    <!-- Descripciones de Iconos (Content Description) -->
+    <string name="desc_icono_volver">Volver atrás</string>
+
+    <!-- Placeholders para la Fase 4 -->
+    <string name="placeholder_inicio">Pantalla de Inicio en construcción</string>
+    <string name="placeholder_catalogo">Pantalla de Catálogo en construcción</string>
+    <string name="placeholder_nuevo">Pantalla de Alta en construcción</string>
+    <string name="placeholder_detalle">Pantalla de Detalle (ID: %1$d) en construcción</string>
+    <string name="placeholder_escaner">Función de cámara/escáner próximamente...</string>
+    <string name="placeholder_ajustes">Pantalla de Ajustes en construcción</string>
+
+    <!-- Textos adicionales previstos -->
+    <string name="msg_escaner_info">Esta funcionalidad se implementará en una fase posterior (requiere CameraX y ML Kit).</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="btn_eliminar">Eliminar</string>
+    <string name="btn_cargar_ejemplos">Cargar componentes SMD de ejemplo</string>
 </resources>
