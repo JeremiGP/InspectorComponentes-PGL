@@ -36,10 +36,13 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.inspectorcomponentes.R
 import com.example.inspectorcomponentes.ui.navigation.Ruta
+import com.example.inspectorcomponentes.ui.screen.CatalogoScreen
+import com.example.inspectorcomponentes.ui.screen.InicioScreen
+import com.example.inspectorcomponentes.ui.viewmodel.ComponenteViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppInspectorMainScreen() {
+fun AppInspectorMainScreen(viewModel: ComponenteViewModel) {
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
@@ -129,10 +132,17 @@ fun AppInspectorMainScreen() {
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(Ruta.Inicio.route) {
-                PlaceholderScreen(stringResource(id = R.string.placeholder_inicio))
+                InicioScreen(
+                    viewModel = viewModel,
+                    onNavigateToCatalogo = { navController.navigate(Ruta.Catalogo.route) },
+                    onNavigateToNuevo = { navController.navigate(Ruta.Formulario.route) }
+                )
             }
             composable(Ruta.Catalogo.route) {
-                PlaceholderScreen(stringResource(id = R.string.placeholder_catalogo))
+                CatalogoScreen(
+                    viewModel = viewModel,
+                    onComponenteClick = { id -> navController.navigate(Ruta.Detalle.createRoute(id)) }
+                )
             }
             composable(Ruta.Formulario.route) {
                 PlaceholderScreen(stringResource(id = R.string.placeholder_nuevo))
