@@ -1,6 +1,5 @@
 package com.example.inspectorcomponentes.ui
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -36,8 +35,10 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.inspectorcomponentes.R
 import com.example.inspectorcomponentes.ui.navigation.Ruta
+import com.example.inspectorcomponentes.ui.screen.AjustesScreen
 import com.example.inspectorcomponentes.ui.screen.CatalogoScreen
 import com.example.inspectorcomponentes.ui.screen.DetalleComponenteScreen
+import com.example.inspectorcomponentes.ui.screen.EscanerScreen
 import com.example.inspectorcomponentes.ui.screen.FormularioComponenteScreen
 import com.example.inspectorcomponentes.ui.screen.InicioScreen
 import com.example.inspectorcomponentes.ui.viewmodel.ComponenteViewModel
@@ -157,10 +158,10 @@ fun AppInspectorMainScreen(
                 )
             }
             composable(Ruta.Escaner.route) {
-                PlaceholderScreen(stringResource(id = R.string.placeholder_escaner))
+                EscanerScreen()
             }
             composable(Ruta.Ajustes.route) {
-                PlaceholderScreen(stringResource(id = R.string.placeholder_ajustes))
+                AjustesScreen(viewModel = viewModel)
             }
             composable(
                 route = Ruta.Detalle.route,
@@ -174,15 +175,5 @@ fun AppInspectorMainScreen(
                 )
             }
         }
-    }
-}
-
-@Composable
-fun PlaceholderScreen(texto: String) {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(text = texto)
     }
 }
