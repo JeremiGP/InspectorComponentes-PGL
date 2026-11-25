@@ -59,8 +59,8 @@ fun AppInspectorMainScreen(
         else -> R.string.app_name
     }
 
-    // Mostramos botón "Volver" solo en pantallas hijas (Detalle)
-    val showBackButton = currentRoute?.startsWith("detalle/") == true
+    // Mostramos botón "Volver" en todas las pantallas excepto en Inicio
+    val showBackButton = currentRoute != Ruta.Inicio.route
 
     Scaffold(
         topBar = {
@@ -134,8 +134,20 @@ fun AppInspectorMainScreen(
             composable(Ruta.Inicio.route) {
                 InicioScreen(
                     viewModel = viewModel,
-                    onNavigateToCatalogo = { navController.navigate(Ruta.Catalogo.route) },
-                    onNavigateToNuevo = { navController.navigate(Ruta.Formulario.route) }
+                    onNavigateToCatalogo = { 
+                        navController.navigate(Ruta.Catalogo.route) {
+                            popUpTo(navController.graph.findStartDestination().id) { saveState = true }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    },
+                    onNavigateToNuevo = { 
+                        navController.navigate(Ruta.Formulario.route) {
+                            popUpTo(navController.graph.findStartDestination().id) { saveState = true }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    }
                 )
             }
             composable(Ruta.Catalogo.route) {

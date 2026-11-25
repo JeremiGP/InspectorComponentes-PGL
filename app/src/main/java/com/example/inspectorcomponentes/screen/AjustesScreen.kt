@@ -45,7 +45,7 @@ fun AjustesScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "Herramientas de depuración del Inspector de Componentes SMD.",
+            text = stringResource(id = R.string.ajustes_info),
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )

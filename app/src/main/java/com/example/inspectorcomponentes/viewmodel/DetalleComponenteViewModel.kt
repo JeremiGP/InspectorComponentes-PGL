@@ -21,7 +21,7 @@ class DetalleComponenteViewModel(
     private val _uiState = MutableStateFlow<DetalleUiState>(DetalleUiState.Cargando)
     val uiState: StateFlow<DetalleUiState> = _uiState.asStateFlow()
 
-    fun cargarComponente(id: Int) {
+    fun cargarComponente(id: Int, msgErrorNotFound: String, msgErrorUnknown: String) {
         viewModelScope.launch {
             _uiState.value = DetalleUiState.Cargando
             try {
@@ -29,10 +29,10 @@ class DetalleComponenteViewModel(
                 if (componente != null) {
                     _uiState.value = DetalleUiState.Exito(componente)
                 } else {
-                    _uiState.value = DetalleUiState.Error("Componente no encontrado")
+                    _uiState.value = DetalleUiState.Error(msgErrorNotFound)
                 }
             } catch (e: Exception) {
-                _uiState.value = DetalleUiState.Error(e.localizedMessage ?: "Error desconocido")
+                _uiState.value = DetalleUiState.Error(e.localizedMessage ?: msgErrorUnknown)
             }
         }
     }

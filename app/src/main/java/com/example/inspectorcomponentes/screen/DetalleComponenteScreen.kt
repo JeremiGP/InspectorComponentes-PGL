@@ -36,11 +36,19 @@ fun DetalleComponenteScreen(
     viewModel: DetalleComponenteViewModel,
     onNavigateBack: () -> Unit
 ) {
+    val msgErrorNotFound = stringResource(id = R.string.error_componente_no_encontrado)
+    val msgErrorUnknown = stringResource(id = R.string.error_desconocido)
+
     // Al abrir la pantalla, se lanza la carga asíncrona usando Dispatchers.IO
     // tal como pide la documentación técnica.
     LaunchedEffect(idComponente) {
         withContext(Dispatchers.IO) {
-            viewModel.cargarComponente(idComponente)
+            // Pasamos los strings externalizados al cargar
+            viewModel.cargarComponente(
+                id = idComponente,
+                msgErrorNotFound = msgErrorNotFound,
+                msgErrorUnknown = msgErrorUnknown
+            )
         }
     }
 
@@ -95,19 +103,19 @@ fun ContenidoDetalle(
                     fontWeight = FontWeight.Bold
                 )
                 Spacer(modifier = Modifier.height(16.dp))
-                DetalleFila(label = "Tipo:", valor = componente.tipo)
-                DetalleFila(label = "Encapsulado:", valor = componente.encapsulado)
-                DetalleFila(label = "Valor:", valor = componente.valor)
-                DetalleFila(label = "SMD:", valor = if (componente.esSmd) "Sí" else "No")
-                DetalleFila(label = "Verificado:", valor = if (componente.verificado) "Sí" else "No")
+                DetalleFila(label = stringResource(id = R.string.detalle_label_tipo), valor = componente.tipo)
+                DetalleFila(label = stringResource(id = R.string.detalle_label_encapsulado), valor = componente.encapsulado)
+                DetalleFila(label = stringResource(id = R.string.detalle_label_valor), valor = componente.valor)
+                DetalleFila(label = stringResource(id = R.string.detalle_label_smd), valor = if (componente.esSmd) stringResource(id = R.string.detalle_si) else stringResource(id = R.string.detalle_no))
+                DetalleFila(label = stringResource(id = R.string.detalle_label_verificado), valor = if (componente.verificado) stringResource(id = R.string.detalle_si) else stringResource(id = R.string.detalle_no))
 
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
-                    text = "Descripción:",
+                    text = stringResource(id = R.string.detalle_label_desc),
                     fontWeight = FontWeight.Bold
                 )
                 Text(
-                    text = componente.descripcion.ifBlank { "Sin descripción" },
+                    text = componente.descripcion.ifBlank { stringResource(id = R.string.detalle_desc_vacia) },
                     style = MaterialTheme.typography.bodyMedium
                 )
             }

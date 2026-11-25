@@ -58,12 +58,12 @@ fun InicioScreen(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Resumen de Inventario",
+                    text = stringResource(id = R.string.inicio_resumen_titulo),
                     style = MaterialTheme.typography.titleMedium
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Total de componentes registrados: ${componentes.size}",
+                    text = stringResource(id = R.string.inicio_resumen_total, componentes.size),
                     style = MaterialTheme.typography.bodyLarge
                 )
             }
@@ -75,7 +75,7 @@ fun InicioScreen(
             onClick = onNavigateToCatalogo,
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Ir al Catálogo")
+            Text(text = stringResource(id = R.string.inicio_btn_catalogo))
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -84,7 +84,7 @@ fun InicioScreen(
             onClick = onNavigateToNuevo,
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Registrar Nuevo Componente")
+            Text(text = stringResource(id = R.string.inicio_btn_nuevo))
         }
     }
 }
