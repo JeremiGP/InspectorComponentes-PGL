@@ -31,8 +31,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.example.inspectorcomponentes.R
 import com.example.inspectorcomponentes.data.local.entity.ComponenteEntity
 import com.example.inspectorcomponentes.viewmodel.ComponenteViewModel
 
@@ -59,9 +61,9 @@ fun CatalogoScreen(
             value = searchQuery,
             onValueChange = { searchQuery = it },
             modifier = Modifier.fillMaxWidth(),
-            label = { Text("Buscar componente") },
+            label = { Text(stringResource(id = R.string.catalogo_buscar_hint)) },
             leadingIcon = {
-                Icon(imageVector = Icons.Default.Search, contentDescription = "Buscar")
+                Icon(imageVector = Icons.Default.Search, contentDescription = stringResource(id = R.string.desc_icono_buscar))
             },
             singleLine = true
         )
@@ -74,7 +76,7 @@ fun CatalogoScreen(
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "No se encontraron componentes.",
+                    text = stringResource(id = R.string.catalogo_vacio),
                     style = MaterialTheme.typography.bodyLarge
                 )
             }
@@ -140,7 +142,7 @@ fun ComponenteCard(
                 IconButton(onClick = { onFavoritoChange(!componente.favorito) }) {
                     Icon(
                         imageVector = if (componente.favorito) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
-                        contentDescription = if (componente.favorito) "Quitar de favoritos" else "Añadir a favoritos",
+                        contentDescription = if (componente.favorito) stringResource(id = R.string.desc_icono_fav_remove) else stringResource(id = R.string.desc_icono_fav_add),
                         tint = if (componente.favorito) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }

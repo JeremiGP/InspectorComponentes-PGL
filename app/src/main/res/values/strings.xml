@@ -19,18 +19,53 @@
 
     <!-- Descripciones de Iconos (Content Description) -->
     <string name="desc_icono_volver">Volver atrás</string>
+    <string name="desc_icono_buscar">Buscar</string>
+    <string name="desc_icono_fav_add">Añadir a favoritos</string>
+    <string name="desc_icono_fav_remove">Quitar de favoritos</string>
+    <string name="desc_icono_escaner_const">Escáner en construcción</string>
 
-    <!-- Placeholders para la Fase 4 -->
-    <string name="placeholder_inicio">Pantalla de Inicio en construcción</string>
-    <string name="placeholder_catalogo">Pantalla de Catálogo en construcción</string>
-    <string name="placeholder_nuevo">Pantalla de Alta en construcción</string>
-    <string name="placeholder_detalle">Pantalla de Detalle (ID: %1$d) en construcción</string>
-    <string name="placeholder_escaner">Función de cámara/escáner próximamente...</string>
-    <string name="placeholder_ajustes">Pantalla de Ajustes en construcción</string>
+    <!-- Pantalla Inicio -->
+    <string name="inicio_resumen_titulo">Resumen de Inventario</string>
+    <string name="inicio_resumen_total">Total de componentes registrados: %1$d</string>
+    <string name="inicio_btn_catalogo">Ir al Catálogo</string>
+    <string name="inicio_btn_nuevo">Registrar Nuevo Componente</string>
 
-    <!-- Textos adicionales previstos -->
-    <string name="msg_escaner_info">Esta funcionalidad se implementará en una fase posterior (requiere CameraX y ML Kit).</string>
+    <!-- Pantalla Catálogo -->
+    <string name="catalogo_buscar_hint">Buscar componente</string>
+    <string name="catalogo_vacio">No se encontraron componentes.</string>
+
+    <!-- Pantalla Formulario (Alta) -->
+    <string name="form_nombre_hint">Nombre (ej. NE555)</string>
+    <string name="form_tipo_hint">Tipo (ej. IC, Resistor)</string>
+    <string name="form_encapsulado_hint">Encapsulado (ej. SOIC-8, 1206)</string>
+    <string name="form_valor_hint">Valor (ej. 10K, Temporizador)</string>
+    <string name="form_desc_hint">Descripción o notas</string>
+    <string name="form_smd_label">¿Es un componente SMD (Surface-Mount Device)?</string>
+    <string name="form_error_obligatorios">El nombre y el tipo son obligatorios</string>
     <string name="btn_guardar">Guardar</string>
+
+    <!-- Pantalla Detalle -->
+    <string name="detalle_label_tipo">Tipo:</string>
+    <string name="detalle_label_encapsulado">Encapsulado:</string>
+    <string name="detalle_label_valor">Valor:</string>
+    <string name="detalle_label_smd">SMD:</string>
+    <string name="detalle_label_verificado">Verificado:</string>
+    <string name="detalle_label_desc">Descripción:</string>
+    <string name="detalle_desc_vacia">Sin descripción</string>
+    <string name="detalle_si">Sí</string>
+    <string name="detalle_no">No</string>
     <string name="btn_eliminar">Eliminar</string>
+
+    <!-- ViewModels (Errores) -->
+    <string name="error_componente_no_encontrado">Componente no encontrado</string>
+    <string name="error_desconocido">Error desconocido</string>
+
+    <!-- Pantalla Escáner (Placeholders) -->
+    <string name="placeholder_escaner">Función de cámara/escáner próximamente...</string>
+    <string name="msg_escaner_info">Esta funcionalidad se implementará en una fase posterior (requiere CameraX y ML Kit).</string>
+
+    <!-- Pantalla Ajustes -->
     <string name="btn_cargar_ejemplos">Cargar componentes SMD de ejemplo</string>
+    <string name="ajustes_info">Herramientas de depuración del Inspector de Componentes SMD.</string>
+
 </resources>

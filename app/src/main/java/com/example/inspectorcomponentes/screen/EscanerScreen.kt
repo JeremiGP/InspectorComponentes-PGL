@@ -31,7 +31,7 @@ fun EscanerScreen() {
     ) {
         Icon(
             imageVector = Icons.Default.Search,
-            contentDescription = "Escáner en construcción",
+            contentDescription = stringResource(id = R.string.desc_icono_escaner_const),
             modifier = Modifier.size(100.dp),
             tint = MaterialTheme.colorScheme.primary
         )

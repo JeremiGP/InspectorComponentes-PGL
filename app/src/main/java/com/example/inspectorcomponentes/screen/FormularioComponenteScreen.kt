@@ -41,6 +41,7 @@ fun FormularioComponenteScreen(
     var esSmd by remember { mutableStateOf(true) }
 
     var errorMensaje by remember { mutableStateOf("") }
+    val errorObligatorios = stringResource(id = R.string.form_error_obligatorios)
 
     Column(
         modifier = Modifier
@@ -59,7 +60,7 @@ fun FormularioComponenteScreen(
         OutlinedTextField(
             value = nombre,
             onValueChange = { nombre = it },
-            label = { Text("Nombre (ej. NE555)") },
+            label = { Text(stringResource(id = R.string.form_nombre_hint)) },
             modifier = Modifier.fillMaxWidth(),
             singleLine = true
         )
@@ -68,7 +69,7 @@ fun FormularioComponenteScreen(
         OutlinedTextField(
             value = tipo,
             onValueChange = { tipo = it },
-            label = { Text("Tipo (ej. IC, Resistor)") },
+            label = { Text(stringResource(id = R.string.form_tipo_hint)) },
             modifier = Modifier.fillMaxWidth(),
             singleLine = true
         )
@@ -77,7 +78,7 @@ fun FormularioComponenteScreen(
         OutlinedTextField(
             value = encapsulado,
             onValueChange = { encapsulado = it },
-            label = { Text("Encapsulado (ej. SOIC-8, 1206)") },
+            label = { Text(stringResource(id = R.string.form_encapsulado_hint)) },
             modifier = Modifier.fillMaxWidth(),
             singleLine = true
         )
@@ -86,7 +87,7 @@ fun FormularioComponenteScreen(
         OutlinedTextField(
             value = valor,
             onValueChange = { valor = it },
-            label = { Text("Valor (ej. 10K, Temporizador)") },
+            label = { Text(stringResource(id = R.string.form_valor_hint)) },
             modifier = Modifier.fillMaxWidth(),
             singleLine = true
         )
@@ -95,7 +96,7 @@ fun FormularioComponenteScreen(
         OutlinedTextField(
             value = descripcion,
             onValueChange = { descripcion = it },
-            label = { Text("Descripción o notas") },
+            label = { Text(stringResource(id = R.string.form_desc_hint)) },
             modifier = Modifier.fillMaxWidth(),
             minLines = 3
         )
@@ -109,7 +110,7 @@ fun FormularioComponenteScreen(
                 checked = esSmd,
                 onCheckedChange = { esSmd = it }
             )
-            Text(text = "¿Es un componente SMD (Surface-Mount Device)?")
+            Text(text = stringResource(id = R.string.form_smd_label))
         }
 
         Spacer(modifier = Modifier.height(24.dp))
@@ -117,7 +118,7 @@ fun FormularioComponenteScreen(
         Button(
             onClick = {
                 if (nombre.isBlank() || tipo.isBlank()) {
-                    errorMensaje = "El nombre y el tipo son obligatorios"
+                    errorMensaje = errorObligatorios
                 } else {
                     val nuevoComponente = ComponenteEntity(
                         nombre = nombre,
